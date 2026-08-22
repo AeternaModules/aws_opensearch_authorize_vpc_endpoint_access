@@ -1,7 +1,3 @@
-output "opensearch_authorize_vpc_endpoint_accesses_id" {
-  description = "Map of id values across all opensearch_authorize_vpc_endpoint_accesses, keyed the same as var.opensearch_authorize_vpc_endpoint_accesses"
-  value       = { for k, v in aws_opensearch_authorize_vpc_endpoint_access.opensearch_authorize_vpc_endpoint_accesses : k => v.id if v.id != null && length(v.id) > 0 }
-}
 output "opensearch_authorize_vpc_endpoint_accesses_account" {
   description = "Map of account values across all opensearch_authorize_vpc_endpoint_accesses, keyed the same as var.opensearch_authorize_vpc_endpoint_accesses"
   value       = { for k, v in aws_opensearch_authorize_vpc_endpoint_access.opensearch_authorize_vpc_endpoint_accesses : k => v.account if v.account != null && length(v.account) > 0 }
